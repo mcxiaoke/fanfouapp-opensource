@@ -10,9 +10,9 @@
 
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<android.plugin.version>3.5.1</android.plugin.version>
+		<android.plugin.version>3.5.3</android.plugin.version>
 		<android.sdk.version>4.1.1.4</android.sdk.version>
-		<androiid.platform.version>15</androiid.platform.version>
+		<androiid.platform.version>17</androiid.platform.version>
 	</properties>
 
     <dependencies>
