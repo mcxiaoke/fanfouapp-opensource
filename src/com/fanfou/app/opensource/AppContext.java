@@ -54,7 +54,7 @@ public class AppContext extends Application {
     }
 
     // DEBUG开关，为false时不打印任何日志
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
 
     public static final boolean TEST = false;
     public static boolean active = false;

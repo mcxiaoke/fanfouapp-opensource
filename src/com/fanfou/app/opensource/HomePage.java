@@ -237,6 +237,9 @@ public class HomePage extends BaseActivity implements OnPageChangeListener,
      * 载入更多，获取较旧的消息
      */
     private void doGetMore() {
+        if (AppContext.DEBUG) {
+            log("doRefresh()");
+        }
         doRetrieve(this.mCurrentPage, true);
     }
 
@@ -253,7 +256,7 @@ public class HomePage extends BaseActivity implements OnPageChangeListener,
     /**
      * 刷新，获取最新的消息
      * 
-     * @param type
+     * @param page
      *            类型参数：Home/Mention/Message/Public
      */
     private void doRetrieve(final int page, final boolean doGetMore) {
@@ -638,6 +641,9 @@ public class HomePage extends BaseActivity implements OnPageChangeListener,
     public void onPageSelected(final int position) {
         this.mCurrentPage = position % HomePage.NUMS_OF_PAGE;
         this.mPageIndicator.onPageSelected(this.mCurrentPage);
+        if (AppContext.DEBUG) {
+            log("startRefresh mCurrentPage="+mCurrentPage);
+        }
         if ((this.cursors[this.mCurrentPage] != null)
                 && (this.cursors[this.mCurrentPage].getCount() == 0)) {
             startRefresh();
@@ -768,9 +774,9 @@ public class HomePage extends BaseActivity implements OnPageChangeListener,
         this.mViewPager.setAdapter(this.mViewAdapter);
         this.mPageIndicator = (TitlePageIndicator) findViewById(R.id.viewindicator);
         this.mPageIndicator.setTitleProvider(this);
+        this.mPageIndicator.setViewPager(this.mViewPager, this.initPage);
 
         if (this.initPage > 0) {
-            this.mPageIndicator.setViewPager(this.mViewPager, this.initPage);
             this.mViewPager.setCurrentItem(this.initPage);
         }
 
@@ -791,6 +797,9 @@ public class HomePage extends BaseActivity implements OnPageChangeListener,
     }
 
     private void startRefresh() {
+        if (AppContext.DEBUG) {
+            log("startRefresh mCurrentPage="+mCurrentPage);
+        }
         if (this.views[this.mCurrentPage] != null) {
             this.views[this.mCurrentPage].setRefreshing();
         }
