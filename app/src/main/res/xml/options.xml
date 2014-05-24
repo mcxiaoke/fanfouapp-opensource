@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="设置" >
+
+    <PreferenceScreen android:title="消息通知" >
+        <PreferenceCategory android:title="消息通知" >
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="@string/option_notification"
+                android:summary="启用消息通知"
+                android:title="消息通知" />
+
+            <ListPreference
+                android:defaultValue="5"
+                android:dependency="@string/option_notification"
+                android:dialogTitle="消息通知时间间隔"
+                android:entries="@array/notification_interval"
+                android:entryValues="@array/notification_interval_values"
+                android:key="@string/option_notification_interval"
+                android:summary="消息通知时间间隔"
+                android:title="消息通知频率" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="通知类型" >
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="@string/option_notification"
+                android:key="@string/option_notification_home"
+                android:title="好友消息" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:dependency="@string/option_notification"
+                android:key="@string/option_notification_mention"
+                android:title="提到我的消息" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:dependency="@string/option_notification"
+                android:key="@string/option_notification_dm"
+                android:title="私信" />
+        </PreferenceCategory>
+        <PreferenceCategory android:title="通知设置" >
+            <RingtonePreference
+                android:defaultValue="content://settings/system/notification_sound"
+                android:dependency="@string/option_notification"
+                android:key="@string/option_notification_ringtone"
+                android:ringtoneType="notification"
+                android:title="铃声" />
+
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:dependency="@string/option_notification"
+                android:key="@string/option_notification_vibrate"
+                android:summary="收到消息和私信时震动提示"
+                android:title="震动" />
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:dependency="@string/option_notification"
+                android:key="@string/option_notification_led"
+                android:summary="收到消息和私信时闪烁提示"
+                android:title="指示灯" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen android:title="显示设置" >
+        <com.fanfou.app.opensource.preferences.colorpicker.ColorPickerPreference
+            alphaSlider="true"
+            android:defaultValue="@color/self_color"
+            android:key="@string/option_color_highlight_self"
+            android:summary="时间线上我的消息背景颜色"
+            android:title="我的消息" />
+        <com.fanfou.app.opensource.preferences.colorpicker.ColorPickerPreference
+            alphaSlider="true"
+            android:defaultValue="@color/mentioned_color"
+            android:key="@string/option_color_highlight_mention"
+            android:summary="时间线上\@消息背景颜色"
+            android:title="\@消息" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/option_text_mode"
+            android:summary="文本模式，不显示头像和图片"
+            android:title="使用文本模式" />
+
+        <com.fanfou.app.opensource.preferences.SeekBarPreference
+            android:defaultValue="15"
+            android:dialogTitle="选择字体大小"
+            android:key="@string/option_fontsize"
+            android:max="28"
+            android:summary="设置文本内容字体大小"
+            android:text="号"
+            android:title="文本字体大小" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="使用偏好" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/option_refresh_on_open"
+            android:summary="客户端启动时刷新时间线"
+            android:title="启动时刷新" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/option_refresh_after_send"
+            android:summary="发消息成功后刷新时间线"
+            android:title="发消息后刷新" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/option_page_scroll_endless"
+            android:summary="页面切换使用循环滚动"
+            android:title="循环滚动" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/option_reply_to_all_default"
+            android:summary="默认回复所有人"
+            android:title="全部回复" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/option_play_sound_effect"
+            android:summary="时间线有新消息时播放音效"
+            android:title="音效反馈" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/option_force_portrait"
+            android:summary="强制竖屏显示"
+            android:title="锁定竖屏" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/option_confirm_on_exit"
+            android:summary="退出时显示确认框"
+            android:title="退出确认" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="@string/option_autoupdate"
+            android:summary="自动检测新版本"
+            android:title="自动升级" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="其它功能" >
+        <com.fanfou.app.opensource.preferences.ClearDataDialogPreference
+            android:dialogMessage="是否要清空数据库中缓存的消息，私信和个人数据？（提示：客户端会自动清理过旧的数据，不建议手动清空）"
+            android:dialogTitle="清空数据缓存"
+            android:key="@string/option_cleandb"
+            android:negativeButtonText="取消"
+            android:positiveButtonText="确定"
+            android:summary="清空缓存的消息，私信和个人数据"
+            android:title="清空数据缓存" />
+
+        <com.fanfou.app.opensource.preferences.ClearCacheDialogPreference
+            android:dialogMessage="是否要清空存储卡中缓存的用户头像和消息图片？（提示：图片缓存在存储卡上，占用空间很小，不建议手动清空）"
+            android:dialogTitle="清空图片缓存"
+            android:key="@string/option_cleanpic"
+            android:negativeButtonText="取消"
+            android:positiveButtonText="确定"
+            android:summary="清空存储卡中缓存的图片"
+            android:title="清空图片缓存" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="软件信息" >
+        <Preference
+            android:key="@string/option_current_account"
+            android:title="当前帐号" />
+        <Preference
+            android:key="@string/option_check_update"
+            android:summary="联网检测是否有新版本"
+            android:title="软件升级" />
+        <Preference
+            android:key="@string/option_changelog"
+            android:summary="查看客户端更新日志"
+            android:title="更新日志" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://apps.fanfou.com/android/changelog.html" />
+        </Preference>
+        <Preference
+            android:key="@string/option_website"
+            android:summary="访问饭否客户端开源项目网站"
+            android:title="项目地址" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/mcxiaoke/fanfouapp-opensource" />
+        </Preference>
+                <Preference
+            android:key="@string/option_license"
+            android:summary="Apache License, Version 2.0"
+            android:title="开源协议" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.apache.org/licenses/LICENSE-2.0" />
+        </Preference>
+    </PreferenceScreen>
+
+</PreferenceScreen>

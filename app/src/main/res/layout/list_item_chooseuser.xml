@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="2dp" >
+
+    <ImageView
+        android:id="@id/item_user_head"
+        style="@style/Image.Head" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="4dp" >
+
+        <TextView
+            android:id="@id/item_user_name"
+            style="@style/Text.Name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:id="@id/item_user_id"
+            style="@style/Text.MetaBig"
+            android:layout_alignBottom="@id/item_user_name"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/item_user_name" />
+
+        <ImageView
+            android:id="@id/item_user_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/item_user_name"
+            android:layout_margin="3dp"
+            android:src="@drawable/i_mini_locked"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@id/item_user_gender"
+            style="@style/Text.MetaBig"
+            android:layout_below="@id/item_user_name"
+            android:paddingRight="10dp" />
+
+        <TextView
+            android:id="@id/item_user_location"
+            style="@style/Text.MetaBig"
+            android:layout_alignBottom="@id/item_user_gender"
+            android:layout_below="@id/item_user_name"
+            android:layout_toRightOf="@id/item_user_gender" />
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/item_user_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/checkbox_bg"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+</LinearLayout>
