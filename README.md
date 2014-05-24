@@ -17,8 +17,6 @@ Project
 ===========================
     饭否Android客户端采用标准Android项目结构：
 
-        main/app目录为客户端项目代码
-        libs/pulltorefresh目录为依赖的下拉刷新项目
         项目的包名已修改为com.fanfou.app.opensource，可以和原版共存
         项目不包含饭否的OAuth API KEY，请自行添加
         项目不包含饭否的LOGO和1.9.1版的图片滤镜功能
@@ -30,21 +28,25 @@ Project
 Usage
 ===========================
 
-####API KEY
+###API KEY
     在进行修改和编译之前，请找到main/app/res/values/api.xml文件，在里面填入你申请的饭否OAuth API KEY
     如果没有，可以去(<http://fanfou.com/apps>)申请
+    
+###使用Gradle (2014.05.24添加)
+    目前只支持使用Gradle构建，直接项目目录运行gradle clean build即可，也可以直接使用Android Studio打开项目
 
-####Using Eclipse
+###<del>使用Eclipse (deprecated)</del>
     直接使用File->Import导入pulltorefresh和app两个项目，Clean&Build即可
     如果需要导出release版，请用自己创建的KeyStore签名
     
-####Using ANT
+###<del>使用ANT (deprecated)</del>
     配置好ANT后，终端进入main/app目录，输入命令ant debug
     如果要构建release版，需要在main/app/ant.properties里面填写keystore相关的配置，然后输入命令ant release
     
-####Using Maven
+###<del>使用Maven (deprecated)</del>
     只支持Maven 3.0以上的版本
     配置好Maven后，终端进入main/app目录，输入命令mvn clean install
+    
     
 ---
     
@@ -73,7 +75,7 @@ Websites
 License
 ===========================
 
-    Copyright 2013 fanfou.com, mcxiaoke
+    Copyright 2013-2014 Xiaoke Zhang
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
