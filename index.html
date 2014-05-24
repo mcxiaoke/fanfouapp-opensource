@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>饭否Android客户端开源项目</title>
+    <title>fanfouapp-opensource</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/mcxiaoke/fanfouapp-opensource">View on GitHub</a>
 
-          <h1 id="project_title">饭否Android客户端开源项目</h1>
-          <h2 id="project_tagline"></h2>
+          <h1 id="project_title">fanfouapp-opensource</h1>
+          <h2 id="project_tagline">fanfouapp for android opensource site</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/mcxiaoke/fanfouapp-opensource/zipball/master">Download this project as a .zip file</a>
@@ -31,9 +31,11 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>饭否Android客户端开源版</h1>
+        <h1>
+<a name="%E9%A5%AD%E5%90%A6android%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%80%E6%BA%90%E7%89%88" class="anchor" href="#%E9%A5%AD%E5%90%A6android%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%BC%80%E6%BA%90%E7%89%88"><span class="octicon octicon-link"></span></a>饭否Android客户端开源版</h1>
 
-<hr><h1>Introduction</h1>
+<hr><h1>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h1>
 
 <p>饭否Android客户端是饭否官方开发和维护的Android客户端2011年9月1日发布1.0版，2012年1月16日发布1.8.8版，此后由于各种原因没有进行功能更新，2013年3月我抽出时间增加了几项功能，于2013年3月21日发布了1.9.1版，之后可能没有时间继续开发</p>
 
@@ -41,12 +43,11 @@
 
 <p>感谢王兴创建了饭否，感谢所有曾经的饭否员工，感谢所有饭否用户，感谢所有支持和热爱饭否的人</p>
 
-<hr><h1>Project</h1>
+<hr><h1>
+<a name="project" class="anchor" href="#project"><span class="octicon octicon-link"></span></a>Project</h1>
 
 <pre><code>饭否Android客户端采用标准Android项目结构：
 
-    main/app目录为客户端项目代码
-    libs/pulltorefresh目录为依赖的下拉刷新项目
     项目的包名已修改为com.fanfou.app.opensource，可以和原版共存
     项目不包含饭否的OAuth API KEY，请自行添加
     项目不包含饭否的LOGO和1.9.1版的图片滤镜功能
@@ -54,45 +55,62 @@
     项目采用UTF-8编码，请修改Eclipse的项目设置
 </code></pre>
 
-<hr><h1>Usage</h1>
+<hr><h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
 
-<h4>API KEY</h4>
+<h3>
+<a name="api-key" class="anchor" href="#api-key"><span class="octicon octicon-link"></span></a>API KEY</h3>
 
 <pre><code>在进行修改和编译之前，请找到main/app/res/values/api.xml文件，在里面填入你申请的饭否OAuth API KEY
 如果没有，可以去(&lt;http://fanfou.com/apps&gt;)申请
 </code></pre>
 
-<h4>Using Eclipse</h4>
+<h3>
+<a name="%E4%BD%BF%E7%94%A8gradle-20140524%E6%B7%BB%E5%8A%A0" class="anchor" href="#%E4%BD%BF%E7%94%A8gradle-20140524%E6%B7%BB%E5%8A%A0"><span class="octicon octicon-link"></span></a>使用Gradle (2014.05.24添加)</h3>
+
+<pre><code>目前只支持使用Gradle构建，直接项目目录运行gradle clean build即可，也可以直接使用Android Studio打开项目
+</code></pre>
+
+<h3>
+<a name="%E4%BD%BF%E7%94%A8eclipse-deprecated" class="anchor" href="#%E4%BD%BF%E7%94%A8eclipse-deprecated"><span class="octicon octicon-link"></span></a><del>使用Eclipse (deprecated)</del>
+</h3>
 
 <pre><code>直接使用File-&gt;Import导入pulltorefresh和app两个项目，Clean&amp;Build即可
 如果需要导出release版，请用自己创建的KeyStore签名
 </code></pre>
 
-<h4>Using ANT</h4>
+<h3>
+<a name="%E4%BD%BF%E7%94%A8ant-deprecated" class="anchor" href="#%E4%BD%BF%E7%94%A8ant-deprecated"><span class="octicon octicon-link"></span></a><del>使用ANT (deprecated)</del>
+</h3>
 
 <pre><code>配置好ANT后，终端进入main/app目录，输入命令ant debug
 如果要构建release版，需要在main/app/ant.properties里面填写keystore相关的配置，然后输入命令ant release
 </code></pre>
 
-<h4>Using Maven</h4>
+<h3>
+<a name="%E4%BD%BF%E7%94%A8maven-deprecated" class="anchor" href="#%E4%BD%BF%E7%94%A8maven-deprecated"><span class="octicon octicon-link"></span></a><del>使用Maven (deprecated)</del>
+</h3>
 
 <pre><code>只支持Maven 3.0以上的版本
 配置好Maven后，终端进入main/app目录，输入命令mvn clean install
 </code></pre>
 
-<hr><h1>Others</h1>
+<hr><h1>
+<a name="others" class="anchor" href="#others"><span class="octicon octicon-link"></span></a>Others</h1>
 
 <pre><code>1. 此项目开源后不会增加新功能，有功能需求请自行fork修改
 2. 有问题可以在https://github.com/mcxiaoke/fanfouapp/issues提
 3. 欢迎Pull Request，代码采用Eclipse四空格缩进格式
 </code></pre>
 
-<hr><h1>Developed By</h1>
+<hr><h1>
+<a name="developed-by" class="anchor" href="#developed-by"><span class="octicon octicon-link"></span></a>Developed By</h1>
 
 <pre><code>Xiaoke Zhang (@mcxiaoke)
 </code></pre>
 
-<hr><h1>Websites</h1>
+<hr><h1>
+<a name="websites" class="anchor" href="#websites"><span class="octicon octicon-link"></span></a>Websites</h1>
 
 <pre><code>饭否官网 http://fanfou.com
 饭否创始人王兴 http://fanfou.com/wangxing
@@ -101,9 +119,10 @@ API KEY申请 http://fanfou.com/apps
 饭否API文档 https://github.com/FanfouAPI/FanFouAPIDoc/wiki
 </code></pre>
 
-<h1>License</h1>
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
 
-<pre><code>Copyright 2013 fanfou.com, mcxiaoke
+<pre><code>Copyright 2013-2014 Xiaoke Zhang
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
