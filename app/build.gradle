@@ -1,14 +1,14 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.3"
+    buildToolsVersion "19.1.0"
 
     defaultConfig {
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 19
         versionCode 20130328
-        versionName "1.9.2-opensource"
+        versionName "1.9.2"
     }
     buildTypes {
         release {
@@ -18,12 +18,14 @@ android {
     }
 
     lintOptions {
-                  abortOnError false
-                        }
+        abortOnError false
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:+'
-    compile 'com.mcxiaoke.pulltorefresh:library:2.5.3'
+    compile 'com.android.support:support-v4:19.1.0'
+    compile('com.mcxiaoke.pulltorefresh:library:2.5.3') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
 }
