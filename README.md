@@ -32,18 +32,21 @@ Usage
     在进行修改和编译之前，请找到main/app/res/values/api.xml文件，在里面填入你申请的饭否OAuth API KEY
     如果没有，可以去(<http://fanfou.com/apps>)申请
     
-###使用Gradle (2014.05.24添加)
-    目前只支持使用Gradle构建，直接项目目录运行gradle clean build即可，也可以直接使用Android Studio打开项目
+###使用Gradle+Android Studio (2014.05.24添加)
+    目前只支持使用Gradle构建，直接项目目录运行./gradlew clean build即可，
+    (Windows用户使用 gradlew.bat clean build)
+    也可以直接使用Android Studio打开项目根目录的build.gradle  
+    (需要Gradle 1.11以上，Android Studio 0.8.0以上)
 
-###<del>使用Eclipse (deprecated)</del>
+###<del>使用Eclipse (不再支持)</del>
     直接使用File->Import导入pulltorefresh和app两个项目，Clean&Build即可
     如果需要导出release版，请用自己创建的KeyStore签名
     
-###<del>使用ANT (deprecated)</del>
+###<del>使用ANT (不再支持)</del>
     配置好ANT后，终端进入main/app目录，输入命令ant debug
     如果要构建release版，需要在main/app/ant.properties里面填写keystore相关的配置，然后输入命令ant release
     
-###<del>使用Maven (deprecated)</del>
+###<del>使用Maven (不再支持)</del>
     只支持Maven 3.0以上的版本
     配置好Maven后，终端进入main/app目录，输入命令mvn clean install
     
