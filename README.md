@@ -2,6 +2,14 @@
 ===========================
     
 ---
+最新说明：
+===========================
+
+  这个项目早就没有更新了，界面也比较陈旧，无论是学习还是修改自用都不是很合适，建议使用蘑菇饭项目的源码，地址是：
+  
+  [https://github.com/mcxiaoke/minicat](https://github.com/mcxiaoke/minicat)
+
+---
 Introduction
 ===========================
 
@@ -78,7 +86,8 @@ Websites
 License
 ===========================
 
-    Copyright 2013-2014 Xiaoke Zhang
+    Copyright 2011-2012 fanfou.com mcxiaoke  
+    Copyright 2013-2014 mcxiaoke support@mcxiaoke.com
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
